@@ -148,11 +148,11 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="margin-right: 180px;" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="IMG/usuario.png" alt="" height="35"></a>
               <ul class="dropdown-menu" style="background: #5fe6f8;">
-                  <li><a class="dropdown-item" href="<?BASE_URL?>usuario">Perfil</a></li>
-                  <li><a class="dropdown-item" href="direccion.html">Direccion</a></li>
-                  <li><a class="dropdown-item" href="pedido.html">pedidos</a>
-                  <li><a class="dropdown-item" href="ayuda.html">Centro de ayuda</a></li>
-                  <li><a class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
+                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>perfil">Perfil</a></li>
+                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>direccion">Direccion</a></li>
+                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>pedido">pedidos</a>
+                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>ayuda">Centro de ayuda</a></li>
+                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>login">Cerrar Sesión</a></li>
   
   
   

@@ -2,9 +2,9 @@
       <div class="row">
         <!-- Row 1 -->
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta1.PNG"
+              src="./views/img/oferta1.PNG"
               width="300px"
               height="400px"
               alt=""
@@ -12,9 +12,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta2.PNG"
+              src="./views/img/oferta2.PNG"
               alt=""
               width="300px"
               height="400px"
@@ -22,9 +22,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta3.PNG"
+              src="./views/img/oferta3.PNG"
               alt=""
               width="300px"
               height="400px"
@@ -32,9 +32,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta4.PNG"
+              src="./views/img/oferta4.PNG"
               alt=""
               width="300px"
               height="400px"
@@ -45,9 +45,9 @@
 
         <!-- Row 2 -->
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta4.PNG"
+              src="./views/img/oferta4.PNG"
               alt=""
               width="300px"
               height="400px"
@@ -60,9 +60,9 @@
           </a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta7.png"
+              src="./views/img/oferta7.png"
               width="300px"
               height="400px"
               alt=""
@@ -74,9 +74,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta8.png"
+              src="./views/img/oferta8.png"
               width="300px"
               height="400px"
               alt=""
@@ -88,9 +88,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta9.png"
+              src="./views/img/oferta9.png"
               width="300px"
               height="400px"
               alt=""
@@ -102,9 +102,9 @@
           /></a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="index.html"
+          <a href="<?php echo BASE_URL?>producto"
             ><img
-              src="img/oferta6.PNG"
+              src="./views/img/oferta6.PNG"
               width="1300px"
               height="150px"
               alt=""

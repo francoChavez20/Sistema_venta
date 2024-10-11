@@ -64,8 +64,8 @@
                 <strong style="color: #ff0707;"><p>PEN 99.90</p></strong>
                 <p>⭐⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -84,8 +84,8 @@
                 <strong style="color: #ff0707;"><p>PEN 169.00</p></strong>
                 <p>⭐⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -104,8 +104,8 @@
                 <strong style="color: #ff0707;"><p>PEN 19.50</p></strong>
                 <p>⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -124,8 +124,8 @@
                 <strong style="color: #ff0707;"><p>PEN 50.00</p></strong>
                 <p>⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -144,8 +144,8 @@
                 <strong style="color: #ff0707;"><p>PEN 69.90</p></strong>
                 <p>⭐⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -164,8 +164,8 @@
                 <strong style="color: #ff0707;"><p>PEN 109.99</p></strong>
                 <p>⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -184,8 +184,8 @@
                 <strong style="color: #ff0707;"><p>PEN 100.00</p></strong>
                 <p>⭐⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -204,8 +204,8 @@
                 <strong style="color: #ff0707;"><p>PEN 65.00</p></strong>
                 <p>⭐⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -225,8 +225,8 @@
                 <strong style="color: #ff0707;"><p>PEN 80.90</p></strong>
                 <p>⭐⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-            <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-            <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -245,8 +245,8 @@
                 <strong style="color: #ff0707;"><p>PEN 60.00</p></strong>
                 <p>⭐⭐⭐ 570+ Vendidos<br>Envío: PEN 10.50</p>
               </p>
-              <a href="descripciones.html" class="btn btn-primary">Ver detalles</a>
-              <a href="carrito.html" class="btn btn-danger">Añadir al carrito</a>
+              <a href="<?php echo BASE_URL?>descripcion" class="btn btn-primary">Ver detalles</a>
+              <a href="<?php echo BASE_URL?>carrito" class="btn btn-danger">Añadir al carrito</a>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" style="margin-right: 180px; " href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./views/IMG/noti.png" alt="" height="35"></a>
             <ul class="dropdown-menu" style="background: #9b9b9b;">
-                <li><a class="dropdown-item" href="index.html">
+                <li><a class="dropdown-item" href="<?php echo BASE_URL?>ofertas">
                   <div class="card mb-3" style="max-width: 540px; ">
                   <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black;">
                     <div class="col-md-4">
@@ -51,7 +51,7 @@
                     </div>
                   </div>
                 </div></a></li>
-                <li><a class="dropdown-item" href="carrito.html"><div class="card mb-3" style="max-width: 540px;">
+                <li><a class="dropdown-item" href="<?php echo BASE_URL?>ofertas"><div class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black;">
                     <div class="col-md-4">
                       <img src="./views/img/oferta2.PNG" class="img-fluid rounded-start" alt="..." style="margin-top: 20px; margin-left: 10px;">
@@ -65,7 +65,7 @@
                     </div>
                   </div>
                 </div></a></li>
-                <li><a class="dropdown-item" href="lo mas vendido.html"><div class="card mb-3" style="max-width: 540px;">
+                <li><a class="dropdown-item" href="<?php echo BASE_URL?>ofertas"><div class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black;">
                     <div class="col-md-4">
                       <img src="./views/img/oferta3.PNG" class="img-fluid rounded-start" alt="..." style="margin-top: 20px; margin-left: 10px;">
@@ -79,7 +79,7 @@
                     </div>
                   </div>
                 </div></a>
-                <li><a class="dropdown-item" href="historial.html"><div class="card mb-3" style="max-width: 540px;">
+                <li><a class="dropdown-item" href="<?php echo BASE_URL?>ofertas"><div class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black;">
                     <div class="col-md-4">
                       <img src="./views/img/oferta4.PNG" class="img-fluid rounded-start" alt="..." style="margin-top: 20px; margin-left: 10px;">
@@ -146,7 +146,7 @@
               </li>
             </ul>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" style="margin-right: 180px;" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="IMG/usuario.png" alt="" height="35"></a>
+              <a class="nav-link dropdown-toggle" style="margin-right: 180px;" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./views/img/usuario.png" alt="" height="35"></a>
               <ul class="dropdown-menu" style="background: #5fe6f8;">
                   <li><a class="dropdown-item" href="<?php echo BASE_URL?>perfil">Perfil</a></li>
                   <li><a class="dropdown-item" href="<?php echo BASE_URL?>direccion">Direccion</a></li>

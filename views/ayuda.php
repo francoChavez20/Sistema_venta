@@ -10,125 +10,6 @@
 
 <body>
 
-    <nav class="navbar bg-body-tertiary" style="background: linear-gradient(blue, rgb(231, 38, 70))">
-        <div class="menu mx-5" style="display: flex">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Bootstrap" width="120" height="50" />
-            </a>
-            <div class="container-fluid mx-5">
-                <form class="d-flex m-2" role="search">
-                    <input style="width: 700px" class="form-control" type="search" placeholder="Search"
-                        aria-label="Search" />
-                    <button class="btn btn-outline-danger mx-3" type="submit">
-                        Buscar
-                    </button>
-                </form>
-            </div>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="margin-right: 180px" href="" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false"><img src="IMG/noti.png" alt=""
-                        height="35" /></a>
-                <ul class="dropdown-menu" style="background: #9b9b9b">
-                    <li>
-                        <a class="dropdown-item" href="index.html">
-                            <div class="card mb-3" style="max-width: 540px">
-                                <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black">
-                                    <div class="col-md-4">
-                                        <img src="img/oferta1.PNG" class="img-fluid rounded-start" alt="..." />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">OFERTAS DEL 40%</h5>
-                                            <p class="card-text">
-                                                Ofertas de hasta el 40% <br />
-                                                en ropa deportiva
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-body-secondary"> 3 mins ago</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="carrito.html">
-                            <div class="card mb-3" style="max-width: 540px">
-                                <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black">
-                                    <div class="col-md-4">
-                                        <img src="img/oferta2.PNG" class="img-fluid rounded-start" alt="..."
-                                            style="margin-top: 20px; margin-left: 10px" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">OFERTAS del 40%</h5>
-                                            <p class="card-text">
-                                                Ofertas de hasta el 40% <br />
-                                                en zapatillas
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-body-secondary"> 3 mins ago</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="index.html">
-                            <div class="card mb-3" style="max-width: 540px">
-                                <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black">
-                                    <div class="col-md-4">
-                                        <img src="img/oferta3.PNG" class="img-fluid rounded-start" alt="..."
-                                            style="margin-top: 20px; margin-left: 10px" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">OFERTAS DEL 50%</h5>
-                                            <p class="card-text">
-                                                Ofertas de hasta el 50% <br />
-                                                en muebles
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-body-secondary"> 3 mins ago</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item" href="index.html">
-                            <div class="card mb-3" style="max-width: 540px">
-                                <div class="row g-0" style="width: 300px; height: 140px; border: 2px solid black">
-                                    <div class="col-md-4">
-                                        <img src="img/oferta4.PNG" class="img-fluid rounded-start" alt="..."
-                                            style="margin-top: 20px; margin-left: 10px" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">OFERTAS DEL 20%</h5>
-                                            <p class="card-text">
-                                                Ofertas de hasta el 20% <br />
-                                                en ollas
-                                            </p>
-                                            <p class="card-text">
-                                                <small class="text-body-secondary">3 mins ago</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div>
-    </nav>
     <div class="img">
         <img style="width: 100%;" src="img/barra_noti.png" alt="">
         <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +23,7 @@
     <div class="menu_superior"
         style="height: 100vh; position: fixed;width: 250px; padding-top: 20px; background-color: #b8b6b6;">
         <div class="text-center" style="color: black;">
-            <img src="img/usuario.png" class="rounded-circle" alt="User" width="100">
+            <img src="./views/img/usuario.png" class="rounded-circle" alt="User" width="100">
             <h4>Mi Cuenta</h4>
             <p>¡Hola!</p>
             <a href="<?php echo BASE_URL?>login" style="color: red;" class="btn btn-link">Cerrar sesión</a>

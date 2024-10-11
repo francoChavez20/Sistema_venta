@@ -2,7 +2,7 @@
         <div id="productos" class="w-75" style="min-height: 900px;">
             <h3 class="text-center">Carrito de compras</h3>
             <div class="card w-90 row m-2 mb-1" style="height: 120px;">
-                <img src="img/producto7.png"
+                <img src="./views/img/producto7.png"
                     alt="" class="h-100 p-0 col-2">
                 <div id="producto" class="p-0 col-4 h-100">
                     <p> Afeitadora eléctrica inalámbrica T9 para hombres, recortadora, electrodomést......</p>
@@ -23,7 +23,7 @@
                 
             </div>
             <div class="card w-90 row m-2 mb-1" style="height: 120px;">
-                <img src="img/organizador.png"
+                <img src="./views/img/organizador.png"
                     alt="" class="h-100 p-0 col-2">
                 <div id="producto" class="p-0 col-4 h-100">
                     <p>Organizador de cocina y estante de almacenamiento para el hogar, carrito con..... </p>
@@ -43,7 +43,7 @@
                 
             </div>
             <div class="card w-90 row m-2 mb-1" style=" height: 120px;">
-                <img src="img/producto3.png"  alt="" class="h-100 p-0 col-2">
+                <img src="./views/img/producto3.png"  alt="" class="h-100 p-0 col-2">
                 <div id="producto" class="p-0 col-4 h-100">
                     <p>Figura de acción de One Piece para niños y adolcentes.... </p>
                     <strong> <p style="color: red;">OFERTA</p> </strong>

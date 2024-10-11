@@ -34,7 +34,7 @@
             </form>
           </div>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="margin-right: 180px; " href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./views/IMG/noti.png" alt="" height="35"></a>
+            <a class="nav-link dropdown-toggle" style="margin-right: 180px; " href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./views/img/noti.png" alt="" height="35"></a>
             <ul class="dropdown-menu" style="background: #9b9b9b;">
                 <li><a class="dropdown-item" href="<?php echo BASE_URL?>ofertas">
                   <div class="card mb-3" style="max-width: 540px; ">

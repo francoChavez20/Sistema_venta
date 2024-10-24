@@ -5,7 +5,7 @@ let detalle = document.querySelector('#detalle').value;
 let precio= document.querySelector('#precio').value;
 let stock = document.querySelector('#stock').value;
 let categoria = document.querySelector('#categoria').value;
-let fecha_v = document.querySelector('#fecha_v').valu;
+let fecha_v = document.querySelector('#fecha_v').value;
 let imagen = document.querySelector('#imagen').value;
 let proveedor = document.querySelector('#proveedor').value;
 if (codigo=="" || nombre=="" || detalle=="" || precio=="" || stock=="" || categoria=="" || fecha_v=="" || imagen=="" || proveedor =="") {
@@ -23,10 +23,29 @@ try{
         cache:'no-cache',
         body: datos
     });
-    console.log(respuesta);
+    json = await respuesta.json();
+    if (json.status) {
+        swal("Registro",json.mensaje,"succes");
+    }else{
+        swal("Registro",json.mensaje,"error");
+    }
+
+    console.log(json);
 }catch(e){
     console.log("oops ocurrio un error"+e);
 }
+
+}
+
+async function listar_categoria(){
+    try {
+        let respuesta = await fetch(base_url+'controller/Categoria.php?tipo=listar');
+
+        console.log(respuesta);
+             
+    } catch (error) {
+        console.log("error al cargar categoria"+ error);
+    }
 
 }
 

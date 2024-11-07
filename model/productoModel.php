@@ -14,5 +14,10 @@ $sql = $this->conexion->query("CALL insertProducto('{$codigo}','{$nombre}','{$de
            $sql = $sql->fetch_object() ;
            return $sql;                                         
     }
+    public function actualizar_imagen($id, $imagen){
+        $sql = $this->conexion->query("UPDATE producto set imagen = '{$imagen}' WHERE id = '{$id}'");
+        return 1;
+
+    }
 }
 ?>

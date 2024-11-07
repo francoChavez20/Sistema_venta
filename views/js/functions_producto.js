@@ -43,13 +43,20 @@ async function listar_categoria(){
         json = await respuesta.json();
         if (json.status) {
             let datos =  json.contenido;
+            let contenido_select = '<option value="">Seleccione</option>';
+
             datos.forEach(element => {
-                $('#categoria').append($('<option />',{
+                contenido_select += '<option value="' + element.id +'">' + element.nombre + '</option>';
+
+                //se trabaja con jquery
+                /*$('#categoria').append($('<option />',{
                     text:`${element.nombre}`,
                     value:`${element.id}`
-                }));
+                }));*/
                 
             });
+            document.getElementById('categoria').innerHTML =
+            contenido_select;
 
         }
 
@@ -61,4 +68,41 @@ async function listar_categoria(){
     }
 
 }
+
+
+
+async function listar_proveedor() {
+    try {
+
+        let respuesta = await fetch(base_url + 'controller/proveedor.php?tipo=listar');
+        let json = await respuesta.json();
+
+        if (json.status) {
+            let datos = json.contenido;
+            let contenido_select = '<option value="">Seleccione</option>';
+
+            
+            datos.forEach(element => {
+                contenido_select += `<option value="${element.id}">${element.razon_social}</option>`;
+                
+                // Si deseas trabajar con jQuery, puedes utilizar esta sección
+                /*
+                $('#categoria').append($('<option />', {
+                    text: `${element.nombre}`,
+                    value: `${element.id}`
+                }));
+                */
+            });
+            document.getElementById('proveedor').innerHTML = contenido_select;
+        } else {
+            console.log("No se encontraron proveedores.");
+        }
+
+        console.log(json); 
+             
+    } catch (error) {
+        console.log("Error al cargar proveedor: " + error);
+    }
+}
+
 

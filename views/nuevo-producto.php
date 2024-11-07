@@ -25,7 +25,7 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        input[type="text"] {
+        input [type="text"] {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -72,9 +72,9 @@
             <input type="text" id="stock" name="stock" placeholder="Stock" required>
         </div>
         <div>
-            <label for="categoria">Categoría</label>
-            <select name="categoria" id="categoria" required>
-                <option>-- selecione --</option>
+            <label  for="categoria">Categoría</label>
+            <select class="select" name="categoria" id="categoria" required>
+                <option>-- seleccione --</option>
             </select>
             
         </div>

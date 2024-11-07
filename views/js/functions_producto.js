@@ -44,10 +44,10 @@ async function listar_categoria(){
         if (json.status) {
             let datos =  json.contenido;
             datos.forEach(element => {
-                $('#categoria').append($('<option />'),{
+                $('#categoria').append($('<option />',{
                     text:`${element.nombre}`,
                     value:`${element.id}`
-                });
+                }));
                 
             });
 

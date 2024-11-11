@@ -17,4 +17,19 @@ class CategoriaModel{
     }
   
 }
+
+class RegistrarCategoriaModel{
+    private $conexion ;
+    function __construct()
+    {
+        $this->conexion = new Conexion();
+        $this->conexion = $this->conexion->connect();
+    }
+    public function registrarCategoria($nombre,$detalle){
+$sql = $this->conexion->query("CALL insertCategoria('{$nombre}','{$detalle}')");
+
+           $sql = $sql->fetch_object() ;
+           return $sql;                                         
+    }
+}
 ?>

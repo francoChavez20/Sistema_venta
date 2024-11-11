@@ -20,4 +20,24 @@ $sql = $this->conexion->query("CALL insertProducto('{$codigo}','{$nombre}','{$de
 
     }
 }
+
+class ListarProductoModel {
+    private $conexion;
+
+    function __construct() {
+        $this->conexion = new Conexion();
+        $this->conexion = $this->conexion->connect();
+    }
+
+    public function obtener_producto() {
+        $arrRespuesta = array();
+        $respuesta = $this->conexion->query("SELECT * FROM producto");
+        
+        while ($objeto = $respuesta->fetch_object()) {
+            array_push($arrRespuesta, $objeto);
+        }
+
+        return $arrRespuesta;
+    }
+}
 ?>

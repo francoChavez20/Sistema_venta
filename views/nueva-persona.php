@@ -139,10 +139,10 @@
             </div>
            
             
-            <button type="button" class="button" onclick="registrar_persona();">Enviar</button>
+            <button type="button" class="button" onclick="registrar_usuarios();">Enviar</button>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </form>
     </div>
-    <script src="<?php echo BASE_URL ?>views/js/functions_persona.js"></script>
+    <script src="<?php echo BASE_URL ?>views/js/functions_personas.js"></script>
 </body>
 </html>

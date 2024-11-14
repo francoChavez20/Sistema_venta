@@ -19,8 +19,8 @@ if ($tipo == "registrar") {
         $cod_postal = $_POST['cod_postal'];
         $direccion = $_POST['direccion'];
         $rol = $_POST['rol'];
-        $password = $_POST['password'];
-        
+        $password = $_POST['password']; // Captura de la contraseña sin encriptar
+       
 
         // Verificación de campos vacíos
         if (
@@ -31,7 +31,10 @@ if ($tipo == "registrar") {
             // Respuesta en caso de campos vacíos
             $arr_Respuestas = array('status' => false, 'mensaje' => 'Error, campos vacíos');
         } else {
-            // Llamada al método para registrar persona
+            // Encriptar la contraseña
+            $password_hashed = password_hash($password, PASSWORD_BCRYPT);
+
+            // Llamada al método para registrar persona con la contraseña encriptada
             $arrPersona = $objPersona->registrarPersona(
                 $nro_identidad,
                 $razon_social,
@@ -43,7 +46,7 @@ if ($tipo == "registrar") {
                 $cod_postal,
                 $direccion,
                 $rol,
-                $password,
+                $password_hashed, // Contraseña encriptada
                 
             );
 
@@ -57,3 +60,4 @@ if ($tipo == "registrar") {
         }
     }
 }
+

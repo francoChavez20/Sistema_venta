@@ -1,4 +1,4 @@
-async function registrar_persona() {
+async function registrar_usuarios() {
     // Capturamos los valores de los campos del formulario
     let nro_identidad = document.getElementById('nro_identidad').value;
     let razon_social = document.querySelector('#razon_social').value;
@@ -10,7 +10,7 @@ async function registrar_persona() {
     let cod_postal = document.querySelector('#cod_postal').value;
     let direccion = document.querySelector('#direccion').value;
     let rol = document.querySelector('#rol').value;
-    let password = document.querySelector('#password').value;
+    let password = document.querySelector('#password').value
     
 
     // Verificación de campos vacíos

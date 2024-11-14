@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -155,7 +161,7 @@
                   <li><a class="dropdown-item" href="<?php echo BASE_URL?>direccion">Direccion</a></li>
                   <li><a class="dropdown-item" href="<?php echo BASE_URL?>pedido">pedidos</a>
                   <li><a class="dropdown-item" href="<?php echo BASE_URL?>ayuda">Centro de ayuda</a></li>
-                  <li><a class="dropdown-item" href="<?php echo BASE_URL?>login">Cerrar Sesión</a></li>
+                  <li><button><a class="dropdown-item" onclick="cerrar_sesion();">Cerrar Sesión</a></button></li>
   
   
   

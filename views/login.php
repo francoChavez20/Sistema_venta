@@ -8,6 +8,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     />
+    <script>
+        const base_url = '<?php echo BASE_URL?>'
+      </script>
     <style>
       body,
       html {
@@ -109,21 +112,25 @@
       <div class="login-container" style="border-radius: 0px 20px 20px 0px">
         <h2>INICIAR SESION</h2>
         <img src="./views/img/usuario.png" alt="Usuario" />
-        <form action="<?php echo BASE_URL?>producto">
+        <form action="" id="frmIniciar">
           <div class="mb-3 p-1">
             <input
               type="text"
-              id="username"
+              id="usuario"
+              name="usuario"
               class="form-control"
               placeholder="Ingrese su usuario"
+              required
             />
           </div>
           <div class="mb-3 p-1">
             <input
               type="password"
               id="password"
+              name="password"
               class="form-control"
               placeholder="Ingrese su contraseña"
+              required
             />
           </div>
           <div class="mb-3 form-check">
@@ -137,4 +144,5 @@
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo BASE_URL ?>views/js/functions_login.js"></script>
 </html>

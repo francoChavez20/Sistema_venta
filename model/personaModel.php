@@ -19,5 +19,10 @@ class personaModel {
         $sql = $sql->fetch_object();
         return $sql;
     }
+    public function buscarPersonaPorDni($dni){
+        $sql = $this->conexion->query("SELECT * FROM persona where nro_identidad = '{$dni}'");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
 }
 ?>

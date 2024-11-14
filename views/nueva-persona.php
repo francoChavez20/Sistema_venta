@@ -137,14 +137,7 @@
                 <label for="password">Contraseña</label>
                 <input type="text" id="password" name="password" placeholder="Contraseña" required>
             </div>
-            <div>
-                <label for="estado">Estado</label>
-                <input type="text" id="estado" name="estado" placeholder="Estado" required>
-            </div>
-            <div>
-                <label for="fecha_reg">Fecha de Registro</label>
-                <input type="date" id="fecha_reg" name="fecha_reg" required>
-            </div>
+           
             
             <button type="button" class="button" onclick="registrar_persona();">Enviar</button>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

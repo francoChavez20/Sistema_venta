@@ -20,14 +20,13 @@ if ($tipo == "registrar") {
         $direccion = $_POST['direccion'];
         $rol = $_POST['rol'];
         $password = $_POST['password'];
-        $estado = $_POST['estado'];
-        $fecha_reg = $_POST['fecha_reg'];
+        
 
         // Verificación de campos vacíos
         if (
             $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" ||
             $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" ||
-            $direccion == "" || $rol == "" || $password == "" || $estado == "" || $fecha_reg == ""
+            $direccion == "" || $rol == "" || $password == ""
         ) {
             // Respuesta en caso de campos vacíos
             $arr_Respuestas = array('status' => false, 'mensaje' => 'Error, campos vacíos');
@@ -45,8 +44,7 @@ if ($tipo == "registrar") {
                 $direccion,
                 $rol,
                 $password,
-                $estado,
-                $fecha_reg
+                
             );
 
             if ($arrPersona->id > 0) {

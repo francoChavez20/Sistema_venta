@@ -15,7 +15,11 @@ class CategoriaModel{
         }
         return $arrRespuesta;
     }
-  
+  public function obtener_categorias($id){
+    $respuesta = $this->conexion->query("SELECT * FROM categoria WHERE id  = '$id'");
+    $objeto = $respuesta->fetch_object();
+    return $objeto;
+  }
 }
 
 class RegistrarCategoriaModel{

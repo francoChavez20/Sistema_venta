@@ -17,6 +17,14 @@ if ($tipo == "listar") {
         // recorremos el array para agregar las opciones de la categorias
         for ($i = 0; $i < count($arr_productos); $i++) {
 
+            $id_categoria = $arr_productos[$i]->id_categoria;
+            $r_categoria = $objCategoria->obtener_categorias($id_categoria);
+            $arr_productos[$i]->categoria = $r_categoria;
+
+            $id_proveedor = $arr_productos[$i]->id_proveedor;
+            $r_proveedor = $objPersona->obtener_proveedor($id_proveedor);
+            $arr_productos[$i]->proveedor = $r_proveedor;
+
             $id_producto = $arr_productos[$i]->id;
             $producto = $arr_productos[$i]->nombre;
             $opciones = '

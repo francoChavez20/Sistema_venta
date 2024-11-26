@@ -24,10 +24,33 @@ class personaModel {
         $sql = $sql->fetch_object();
         return $sql;
     }
-    /*public function obtener_product($id){
+    public function obtener_proveedor($id) {
         $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id = '$id' AND rol = 'proveedor'");
         $objeto = $respuesta->fetch_object();
         return $objeto;
-    } */
+    }
+
+    public function obtener_proveedores() {
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'proveedor'");
+        $proveedores = [];
+        while ($row = $respuesta->fetch_object()) {
+            $proveedores[] = $row;
+        }
+        return $proveedores;
+    }
+    public function obtener_usuarios() {
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'usuario'");
+        $usuarios = [];
+        while ($row = $respuesta->fetch_object()) {
+            $usuarios[] = $row;
+        }
+        return $usuarios;
+    }
+    public function obtener_trabajador($id){
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id  = '$id'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+      }
+     
 }
 ?>

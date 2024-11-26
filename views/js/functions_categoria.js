@@ -61,6 +61,37 @@ async function registrar_categoria(){
         }
     
     }
+
+    async function ver_categoria() {
+        try {
+            let respuesta = await fetch(base_url+'controller/categoria.php?tipo=listar');
+            let json = await respuesta.json();
+            if (json.status) {
+                let datos = json.contenido;
+                let cont = 0;
+                datos.forEach(item=>{
+                    let nueva_fila = document.createElement("tr");
+                    nueva_fila.id = "fila_"+item.id;
+                    cont+=1;
+                    nueva_fila.innerHTML = `
+                    <th>${cont}</th>
+                    <td>${item.nombre}</td>
+                    <td>${item.detalle}</td>
+                    
+                    <td></td>`;
+    
+                    document.querySelector('#tbl_categoria').appendChild(nueva_fila)
+                });
+            }
+            console.log(json);
+        } catch (error) {
+            console.log("oops salio error"+error);
+        }
+    }
+    
+    if (document.querySelector('#tbl_categoria')) {
+        ver_categoria();
+    }
     
     
     

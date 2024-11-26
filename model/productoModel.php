@@ -28,6 +28,11 @@ $sql = $this->conexion->query("CALL insertProducto('{$codigo}','{$nombre}','{$de
         return 1;
 
     }
+    public function obtener_product($id){
+        $respuesta = $this->conexion->query("SELECT * FROM producto WHERE id  = '$id'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+      }
    
 }
 

@@ -7,7 +7,7 @@ class Conexion{
         $mysql = new mysqli(BD_HOST, BD_USER, BD_PASSWORD, BD_NAME); 
         $mysql->set_charset(BD_CHARSET);
         if (mysqli_connect_errno()){
-            echo "Error de conexion: ",
+            echo "Error de conexion: ";
             mysqli_connect_errno();
         }
         return  $mysql;

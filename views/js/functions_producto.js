@@ -16,7 +16,7 @@ async function listar_producto() {
                 <td>${item.stock}</td>
                 <td>${item.categoria.nombre}</td>
                 <td>${item.proveedor.razon_social}</td>
-                <td></td>`;
+                <td>${item.options}</td>`;
 
                 document.querySelector('#tbl_producto').appendChild(nueva_fila)
             });
@@ -137,6 +137,28 @@ async function listar_proveedor() {
              
     } catch (error) {
         console.log("Error al cargar proveedor: " + error);
+    }
+}
+
+async function ver_producto(id) {
+    const formData = new FormData();
+    formData.append('id_producto', id);
+    try {
+        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=ver',{
+            method: 'POST',
+            mode:'cors',
+            cache: 'no-cache',
+            body: formData
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            document.querySelector('#codigo').value = json.contenido.codigo;
+        }else{
+            window.location= base_url+"ver-productos";
+        }
+        console.log(json);
+    } catch (error) {
+        console.log("opp ocurrio un error"+error)
     }
 }
 

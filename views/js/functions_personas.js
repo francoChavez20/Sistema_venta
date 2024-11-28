@@ -114,7 +114,7 @@ async function registrar_usuarios() {
         const datos = new FormData(document.getElementById('frmRegistrarPersona'));
         
         // Enviar los datos hacia el controlador
-        let respuesta = await fetch(base_url + 'controller/Persona.php?tipo=registrar', {
+        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=registrar', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',

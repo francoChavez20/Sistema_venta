@@ -8,7 +8,7 @@ class vistaModelo
         $palabras_permitidas = ['usuario', 'producto', 'descripcion', 'ofertas', 'carrito', 'mujer', 'varon','perfil', 'pedido','direccion','ayuda', 'moneda','nuevo-producto','nueva-categoria',
     'nueva-persona','nueva-compra','ver-productos','ver-proveedor','ver-categoria','ver-usuario','ver-compras'];
 
-    if (isset($_SESSION['sesion_ventas_id'])) {
+    if (!isset($_SESSION['sesion_ventas_id'])) {
         return "login";
     }
     

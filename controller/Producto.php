@@ -81,13 +81,13 @@ if ($tipo == "registrar") {
 
 if($tipo == "ver"){
     //print_r($_POST);
-    $id_producto = $_POST['id_producto'];
+    $id_producto= $_POST['id_producto'];
     $arr_Respuesta = $objProducto->verProducto($id_producto);
     //print_r($arr_Respuesta);
     if(empty($arr_Respuesta)){
-        $response = array('status ' => false, 'mensaje' => "No se encontraron resultados");
+        $response = array('status' => false, 'mensaje' => "No se encontraron resultados");
     }else{
-        $response = array('status ' => true, 'mensaje' => "datos encontrados",'contenido'=>$arr_Respuesta);
+        $response = array('status' => true, 'mensaje' => "datos encontrados",'contenido'=>$arr_Respuesta);
     }
     echo json_encode($response);
 }

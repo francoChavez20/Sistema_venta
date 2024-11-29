@@ -111,7 +111,7 @@
             <div>
                 <label for="categoria">Categoría</label>
                 <select name="categoria" id="categoria" required>
-                    <option value="">-- Seleccione --</option>
+                    
                 </select>
             </div>
             <div>
@@ -125,10 +125,10 @@
             <div>
                 <label for="proveedor">Proveedor</label>
                 <select name="proveedor" id="proveedor" required>
-                    <option value="">-- Seleccione proveedor --</option>
+                   
                 </select>
             </div>
-            <button type="button" class="button" onclick="registrar_producto();">Enviar</button>
+            <button type="button" class="button" onclick="registrar_producto();">Actualizar</button>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </form>
     </div>

@@ -153,6 +153,12 @@ async function ver_producto(id) {
         json = await respuesta.json();
         if (json.status) {
             document.querySelector('#codigo').value = json.contenido.codigo;
+            document.querySelector('#nombre').value = json.contenido.nombre;
+            document.querySelector('#detalle').value = json.contenido.detalle;
+            document.querySelector('#precio').value = json.contenido.precio;
+            document.querySelector('#categoria').value = json.contenido.categoria.nombre;
+            document.querySelector('#fecha_v').value = json.contenido.fecha_v;
+            document.querySelector('#proveedor').value = json.contenido.proveedor.razon_social;
         }else{
             window.location= base_url+"ver-productos";
         }

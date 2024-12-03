@@ -60,7 +60,7 @@ try{
     });
     json = await respuesta.json();
     if (json.status) {
-        swal("Registro",json.mensaje,"succes");
+        swal("Registro",json.mensaje,"success");
     }else{
         swal("Registro",json.mensaje,"error");
     }

@@ -53,19 +53,20 @@ if ($tipo == "registrar") {
         $proveedor = $_POST['proveedor'];
 
         if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $fecha_v == "" || $categoria == "" || $imagen == "" || $proveedor == "") {
+            $arr_Respuestas = array('status' => false, 'mensaje' => 'error camps vacios');
+            }else{
             //respuesta
             $archivo = $_FILES['imagen']['tmp_name'];
-                $destino = './assets/img_productos/';
+                $destino = '../asset/img_producto/';
                 $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
 
-            $arr_Respuestas = array('status' => false, 'mensaje' => 'error,campos vacios');
-        } else {
-            $arrProducto = $objProducto->registrarProducto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $fecha_v, $imagen, $proveedor);
+                $arrProducto = $objProducto->registrarProducto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $fecha_v, $imagen, $proveedor,$tipoArchivo);
 
-            if ($arrProducto->id > 0) {
+            if ($arrProducto->id_n > 0) {
+                $newind = $arrProducto->id_n;
                 $arr_Respuestas = array('status' => true, 'mensaje' => 'Registro Exitoso');
 
-                $nombre = $arrProducto->id . "." . $tipoArchivo;
+                $nombre = $arrProducto->id_n . "." . $tipoArchivo;
 
                 if (move_uploaded_file($archivo, $destino . '' . $nombre)) {
                 } else {

@@ -212,7 +212,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="./index.php" class="nav-link">Panel de administrador</a>
+        <a href="<?php echo BASE_URL;?>inicio" class="nav-link">Panel de administrador</a>
       </li>
       </li>
     </ul>
@@ -231,7 +231,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed; top: 0; bottom: 0; left: 0; width: 250px; overflow-y: auto;">
     <!-- Brand Logo -->
-    <a href="<?php echo BASE_URL;?>/index.php" class="brand-link">
+    <a href="<?php echo BASE_URL;?>inicio" class="brand-link">
       <img src="<?php echo BASE_URL;?>views/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">CPanel</span>
     </a>

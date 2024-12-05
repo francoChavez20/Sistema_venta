@@ -1,3 +1,5 @@
+git stash save
+
 <?php
 
 require_once "../config/config.php";

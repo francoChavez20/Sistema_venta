@@ -1,5 +1,3 @@
-
-
 async function listar_proveedor() {
     try {
         let respuesta = await fetch(base_url+'controller/Persona.php?tipo=listar');
@@ -41,7 +39,7 @@ if (document.querySelector('#tbl_proveedor')) {
 
 async function listar_usuarios() {
     try {
-        let respuesta = await fetch(base_url+'controller/Persona.php?tipo=listar_usuario');
+        let respuesta = await fetch(base_url+'controller/persona.php?tipo=listar_usuario');
         let json = await respuesta.json();
         if (json.status) {
             let datos = json.contenido;

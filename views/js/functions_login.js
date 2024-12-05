@@ -18,7 +18,7 @@ async function iniciar_sesion() {
         json = await respuesta.json();
         if (json.status) {
             //swal("Iniciar Sesion",json.mensaje,"succes");
-            location.replace(base_url+'inicio');
+            location.replace(base_url+'/views/inicio');
         }else{
             swal("Iniciar Sesion",json.mensaje,"error");
         }

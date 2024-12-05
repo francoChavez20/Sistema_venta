@@ -114,8 +114,3 @@
     </div>
     <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-<?php
-include './layout/parte2.php'
-
-?>

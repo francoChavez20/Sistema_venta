@@ -156,9 +156,11 @@ async function ver_producto(id) {
             document.querySelector('#nombre').value = json.contenido.nombre;
             document.querySelector('#detalle').value = json.contenido.detalle;
             document.querySelector('#precio').value = json.contenido.precio;
-            document.querySelector('#categoria').value = json.contenido.categoria.nombre;
+            document.querySelector('#categoria').value = json.contenido.id_categoria;
             document.querySelector('#fecha_v').value = json.contenido.fecha_v;
-            document.querySelector('#proveedor').value = json.contenido.proveedor.razon_social;
+            document.querySelector('#proveedor').value = json.contenido.id_proveedor;
+            document.querySelector('#img').value = json.contenido.imagen;
+            
         }else{
             window.location= base_url+"ver-productos";
         }
@@ -167,5 +169,28 @@ async function ver_producto(id) {
         console.log("opp ocurrio un error"+error)
     }
 }
+async function actualizar_producto() {
+    const datos = new FormData(frmActualizar);
+    try{
+        
+        let respuesta = await fetch(base_url+'controller/Producto.php?tipo=actualizar',{
+            method: 'POST', 
+            mode: 'cors',
+            cache:'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Registro",json.mensaje,"success");
+        }else{
+            swal("Registro",json.mensaje,"error");
+        }
+    
+        console.log(json);
+    }catch(e){
+        console.log("oops ocurrio un error"+e);
+    }
+    
 
+}
 

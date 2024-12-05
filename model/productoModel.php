@@ -37,6 +37,11 @@ $sql = $this->conexion->query("CALL insertProducto('{$codigo}','{$nombre}','{$de
        $sql= $sql->fetch_object();
        return $sql;
       }
+      public function actualizarProducto($id, $nombre, $detalle, $precio, $categoria, $fecha_v, $proveedor){
+        $sql = $this->conexion->query("CALL updateProducto('{$id}','{$nombre}','{$detalle}','{$precio}','{$categoria}','{$fecha_v}','{$proveedor}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
    
 }
 

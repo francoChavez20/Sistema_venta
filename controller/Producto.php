@@ -28,8 +28,8 @@ if ($tipo == "listar") {
             $id_producto = $arr_productos[$i]->id;
             $producto = $arr_productos[$i]->nombre;
             $opciones = '
-            <a href="'.BASE_URL.'editar-producto/'. $id_producto.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
-            <button onclick="eliminar-producto('. $id_producto.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+            <a href="' . BASE_URL . 'editar-producto/' . $id_producto . '" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar-producto(' . $id_producto . ');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
 
             $arr_productos[$i]->options = $opciones;
         }
@@ -54,13 +54,13 @@ if ($tipo == "registrar") {
 
         if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $fecha_v == "" || $categoria == "" || $imagen == "" || $proveedor == "") {
             $arr_Respuestas = array('status' => false, 'mensaje' => 'error camps vacios');
-            }else{
+        } else {
             //respuesta
             $archivo = $_FILES['imagen']['tmp_name'];
-                $destino = '../asset/img_producto/';
-                $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
+            $destino = '../asset/img_producto/';
+            $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
 
-                $arrProducto = $objProducto->registrarProducto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $fecha_v, $imagen, $proveedor,$tipoArchivo);
+            $arrProducto = $objProducto->registrarProducto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $fecha_v, $imagen, $proveedor, $tipoArchivo);
 
             if ($arrProducto->id_n > 0) {
                 $newind = $arrProducto->id_n;
@@ -80,15 +80,51 @@ if ($tipo == "registrar") {
     }
 }
 
-if($tipo == "ver"){
+if ($tipo == "ver") {
     //print_r($_POST);
-    $id_producto= $_POST['id_producto'];
+    $id_producto = $_POST['id_producto'];
     $arr_Respuesta = $objProducto->verProducto($id_producto);
     //print_r($arr_Respuesta);
-    if(empty($arr_Respuesta)){
+    if (empty($arr_Respuesta)) {
         $response = array('status' => false, 'mensaje' => "No se encontraron resultados");
-    }else{
-        $response = array('status' => true, 'mensaje' => "datos encontrados",'contenido'=>$arr_Respuesta);
+    } else {
+        $response = array('status' => true, 'mensaje' => "datos encontrados", 'contenido' => $arr_Respuesta);
     }
     echo json_encode($response);
 }
+
+if ($tipo == "actualizar") {
+    //print_r($_POST);
+    //print_r($_FILES['imagen']['tmp_name']);
+    $id_producto = $_POST['id_producto'];
+    $img = $_POST['img'];
+    $nombre  = $_POST['nombre'];
+    $detalle  = $_POST['detalle'];
+    $precio  = $_POST['precio'];
+    $categoria  = $_POST['categoria'];
+    $fecha_v = $_POST['fecha_v'];
+    $proveedor = $_POST['proveedor'];
+
+    if ($nombre == "" || $detalle == "" || $precio == "" || $categoria == "" || $fecha_v == "" ||  $proveedor == "") {
+        $arr_Respuestas = array('status' => false, 'mensaje' => 'error camps vacios');
+    } else {
+        $arrProducto = $objProducto->actualizarProducto($id_producto, $nombre, $detalle, $precio, $categoria, $fecha_v, $proveedor);
+        if ($arrProducto->p_id > 0) {
+            $arr_Respuestas = array('status' => true, 'mensaje' => 'actualizacion Exitoso');
+
+            if ($_FILES['imagen']['tmp_name'] != "") {
+                unlink('../asset/img_productos' . $img);
+                //cargar Archivo
+                $archivo = $_FILES['imagen']['tmp_name'];
+                $destino = '../asset/img_productos/';
+                $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
+                if (move_uploaded_file($archivo, $destino . '' . $id_producto . '.' . $tipoArchivo)) {
+                }
+            }
+        } else {
+            $arr_Respuestas = array('status' => false, 'mensaje' => 'Error al actualizar Producto');
+        }
+    }
+    echo json_encode($arr_Respuestas);
+}
+

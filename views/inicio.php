@@ -27,10 +27,10 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-warning">
                         <div class="inner">
-                        <script src="<?php echo BASE_URL ?>views/js/functions_compras.js"></script>
+                        
 
                             <h3><?php  ?></h3>
-                            <p>Miembros Registrados</p>
+                            <p>Productos Registrados</p>
                         </div>
                         <a href="">
                             <div class="icon">
@@ -51,7 +51,7 @@
                             ?>
 
                             <h3><?php  ?></h3>
-                            <p>Membresías Registradas</p>
+                            <p>Categorias Registradas</p>
                         </div>
                         <a href="">
                             <div class="icon">
@@ -72,7 +72,27 @@
                             ?>
 
                             <h3><?php  ?></h3>
-                            <p>Pagos Registrados</p>
+                            <p>proveedores Registrados</p>
+                        </div>
+                        <a href="">
+                            <div class="icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                        </a>
+                        <a href="" class="small-box-footer">
+                            Más detalle <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <?php
+                           
+                            ?>
+
+                            <h3><?php  ?></h3>
+                            <p>Compras Registradas</p>
                         </div>
                         <a href="">
                             <div class="icon">

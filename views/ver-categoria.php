@@ -26,8 +26,8 @@
             </div>
             <!-- /.card-tools -->
         </div>
-        <div class="card-body" style="display: block;">
-            <table id="example1" class="table table-bordered table-striped">
+        <div class="card-body " style="display: block;">
+            <table id="example1" class="table table-bordered table-striped col-7 center">
                 <thead>
            <tr>
             <th>Nro</th>
@@ -36,7 +36,7 @@
             <th>Acciones</th>
            </tr>
         </thead>
-        <tbody id="tbl_categoria" style="font-family: 'Times New Roman', Times, serif;">
+        <tbody id="tbl_categoria" style="font-family: 'Times New Roman', Times, serif; ">
             
         </tbody>
     </table>

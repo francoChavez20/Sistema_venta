@@ -16,7 +16,7 @@ async function listar_compras() {
                 <td>${item.precio}</td>
                 <td>${item.fecha_compra}</td>
                 <td>${item.trabajador.razon_social}</td>
-                <td></td>`;
+                <td>${item.options}</td>`;
 
                 document.querySelector('#tbl_compras').appendChild(nueva_fila)
             });

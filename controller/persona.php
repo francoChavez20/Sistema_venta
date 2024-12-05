@@ -17,7 +17,9 @@ if ($tipo == "listar") {
             $id_proveedor = $arr_proveedor[$i]->id; 
             $proveedor = $arr_proveedor[$i] ->razon_social;
             $opciones = '
-            <a href="" class="btn btn-success"><i class="fa fa-pencil"></i></a>';
+            <a href="'.BASE_URL.'editar-producto/'. $id_proveedor.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar-producto('. $id_proveedor.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+            
             $arr_proveedor[$i]->options = $opciones;
         }
         $arr_Respuestas['status'] = true;
@@ -37,8 +39,8 @@ if ($tipo == "listar_usuario") {
         for ($i = 0; $i < count($arr_usuarios); $i++) {
             $id_usuario = $arr_usuarios[$i]->id; 
             $opciones = '
-            <a href="" class="btn btn-success"><i class="fa fa-pencil"></i></a>
-            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>';
+            <a href="'.BASE_URL.'editar-producto/'. $id_usuario.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar-producto('. $id_usuario.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
             $arr_usuarios[$i]->options = $opciones; 
         }
         $arr_Respuestas['status'] = true;

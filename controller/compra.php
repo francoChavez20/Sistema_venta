@@ -25,12 +25,11 @@ if ($tipo == "listar") {
             $id_trabajador = $arr_compra[$i]->id_trabajador; // Obtén el ID del proveedor relacionado con el producto
             $r_trabajador = $objPersona->obtener_trabajador($id_trabajador); // Obtén los datos del proveedor
             $arr_compra[$i]->trabajador = $r_trabajador; // Asocia el proveedor al producto
-
-
             $id_compra = $arr_compra[$i]->id;
             
             $opciones = '
-            <a href="" class="btn btn-success"><i class="fa fa-pencil"></i></a>';
+            <a href="'.BASE_URL.'editar-producto/'. $id_compra.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar-producto('. $id_compra.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
             $arr_compra[$i]->options = $opciones;
         }
         $arr_Respuestas['status'] = true;

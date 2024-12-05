@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="card card-primary m-2">
+    <div class="card row card-primary m-2">
         <div class="card-header">
             <h3 class="card-title">Proveedores</h3>
 
@@ -27,7 +27,7 @@
             <!-- /.card-tools -->
         </div>
         <div class="card-body" style="display: block;">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table sm  table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Nro</th>
@@ -41,7 +41,6 @@
                         <th>cod_postal</th>
                         <th>direccion</th>
                         <th>rol</th>
-
                         <th>Acciones</th>
                     </tr>
                 </thead>

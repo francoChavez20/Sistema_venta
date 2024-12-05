@@ -22,6 +22,9 @@ class CategoriaModel{
   }
 }
 
+
+
+
 class RegistrarCategoriaModel{
     private $conexion ;
     function __construct()

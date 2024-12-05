@@ -172,496 +172,201 @@
         </div>
       </nav class="col-12">-->
       <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-      <script>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de administrador </title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/templeates/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/templeates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+  <!-- sweetalert2 para alertas -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <!-- DataTables -->
+   <link rel="stylesheet" href="<?php echo BASE_URL;?>public/templeates/AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>public/templeates/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>public/templeates/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- jQuery -->
+    <script src="<?php echo BASE_URL;?>/public/templeates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+
+    <script>
         const base_url = '<?php echo BASE_URL?>'
       </script>
-        <title>Document</title>
-      </head>
-      <body>
-        <style>
-          :root {
-    --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 
-*, *::before, *::after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+</head>
+<body class="hold-transition sidebar-mini">
 
-html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+<div class="wrapper">
 
-nav {
-    display: block;
-}
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="./index.php" class="nav-link">Panel de administrador</a>
+      </li>
+      </li>
+    </ul>
 
-body {
-    margin: 0;
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #515151;
-    text-align: left;
-    background-color: #e9edf4;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: #3f84fc;
-    text-decoration: none;
-    background-color: transparent;
-}
-
-a:hover {
-    color: #0458eb;
-    text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Nunito", sans-serif;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-h1, .h1 {
-    font-size: 2.5rem;
-    font-weight: normal;
-}
-
-.card {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0;
-}
-
-.card-body {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
-
-.card-header {
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    text-align: center;
-}
-
-.dashboard {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    min-height: 100vh;
-}
-
-.dashboard-app {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-flex: 2;
-    -webkit-flex-grow: 2;
-    -ms-flex-positive: 2;
-    flex-grow: 2;
-    margin-top: 84px;
-}
-
-.dashboard-content {
-    -webkit-box-flex: 2;
-    -webkit-flex-grow: 2;
-    -ms-flex-positive: 2;
-    flex-grow: 2;
-    padding: 25px;
-}
-
-.dashboard-nav {
-    min-width: 238px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    overflow: auto;
-    background-color: #373193;
-}
-
-.dashboard-compact .dashboard-nav {
-    display: none;
-}
-
-.dashboard-nav header {
-    min-height: 84px;
-    padding: 8px 27px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.dashboard-nav header .menu-toggle {
-    display: none;
-    margin-right: auto;
-}
-
-.dashboard-nav a {
-    color: #515151;
-}
-
-.dashboard-nav a:hover {
-    text-decoration: none;
-}
-
-.dashboard-nav {
-    background-color: #443ea2;
-}
-
-.dashboard-nav a {
-    color: #fff;
-}
-
-.brand-logo {
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    color: #515151;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.brand-logo:focus, .brand-logo:active, .brand-logo:hover {
-    color: #dbdbdb;
-    text-decoration: none;
-}
-
-.brand-logo i {
-    color: #d2d1d1;
-    font-size: 27px;
-    margin-right: 10px;
-}
-
-.dashboard-nav-list {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.dashboard-nav-item {
-    min-height: 56px;
-    padding: 8px 20px 8px 70px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    letter-spacing: 0.02em;
-    transition: ease-out 0.5s;
-}
-
-.dashboard-nav-item i {
-    width: 36px;
-    font-size: 19px;
-    margin-left: -40px;
-}
-
-.dashboard-nav-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.active {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-nav-dropdown {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.dashboard-nav-dropdown.show {
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle {
-    font-weight: bold;
-}
-
-.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle:after {
-    -webkit-transform: none;
-    -o-transform: none;
-    transform: none;
-}
-
-.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-menu {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.dashboard-nav-dropdown-toggle:after {
-    content: "";
-    margin-left: auto;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid rgba(81, 81, 81, 0.8);
-    -webkit-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.dashboard-nav .dashboard-nav-dropdown-toggle:after {
-    border-top-color: rgba(255, 255, 255, 0.72);
-}
-
-.dashboard-nav-dropdown-menu {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.dashboard-nav-dropdown-item {
-    min-height: 40px;
-    padding: 8px 20px 8px 70px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    transition: ease-out 0.5s;
-}
-
-.dashboard-nav-dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.menu-toggle {
-    position: relative;
-    width: 42px;
-    height: 42px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: #443ea2;
-}
-
-.menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
-    text-decoration: none;
-    color: #875de5;
-}
-
-.menu-toggle i {
-    font-size: 20px;
-}
-
-.dashboard-toolbar {
-    min-height: 84px;
-    background-color: #dfdfdf;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 8px 27px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.nav-item-divider {
-    height: 1px;
-    margin: 1rem 0;
-    overflow: hidden;
-    background-color: rgba(236, 238, 239, 0.3);
-}
-
-@media (min-width: 992px) {
-    .dashboard-app {
-        margin-left: 238px;
-    }
-
-    .dashboard-compact .dashboard-app {
-        margin-left: 0;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .dashboard-content {
-        padding: 15px 0px;
-    }
-}
-
-@media (max-width: 992px) {
-    .dashboard-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1070;
-    }
-
-    .dashboard-nav.mobile-show {
-        display: block;
-    }
-}
-
-@media (max-width: 992px) {
-    .dashboard-nav header .menu-toggle {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-    }
-}
-
-@media (min-width: 992px) {
-    .dashboard-toolbar {
-        left: 238px;
-    }
-
-    .dashboard-compact .dashboard-toolbar {
-        left: 0;
-    }
-}
-        </style>
-      <div class='dashboard'>
-    <div class="dashboard-nav">
-        <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
-                                                                                   class="brand-logo"><i
-                class="fas fa-anchor"></i> <span>Sistema de <br> productos</span></a></header>
-
-        <nav class="dashboard-nav-list">
-          <a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i>
-            Inicio </a><a
-                href="#" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> productos
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
         </a>
-        <a
-                href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
 
-            <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
-                    class="fas fa-photo-video"></i> Media </a>
-                
-            </div>
-          <a
-                    href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
-        </nav>
-    </div>
-    <div class='dashboard-app'>
-        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
-        <div class='dashboard-content'>
-            <div class='container'>
-                <div class='card'>
-                    <div class='card-header'>
-                        <h1>Welcome back Jim</h1>
-                    </div>
-                    <div class='card-body'>
-                        <p>Your account type is: Administrator</p>
-                    </div>
-                </div>
-            </div>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed; top: 0; bottom: 0; left: 0; width: 250px; overflow-y: auto;">
+    <!-- Brand Logo -->
+    <a href="<?php echo BASE_URL;?>/index.php" class="brand-link">
+      <img src="<?php echo BASE_URL;?>views/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">CPanel</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="<?php echo BASE_URL; ?>/public/templeates/AdminLTE-3.2.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
+        <div class="info">
+          <a href="#" class="d-block"><?php // echo $usuario['nombre'].'  '.$usuario['apellido']; ?></a>
+        </div>
+      </div>
 
-      
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Productos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-productos" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>lista de productos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Categorias
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-categoria" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>lista de categorias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-credit-card"></i>
+              <p>
+                Proveedores
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-proveedor" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>lista de proveedores</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-credit-card"></i>
+              <p>
+                 Compras
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-compras" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>lista de compras</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-user-circle"></i>
+              <p>
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-usuario" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado Usuario</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+                        <a class="nav-link mt-4" onclick="cerrar_sesion();" style="background-color: #ca0a0b">
+                            <i class="nav-icon fas fa-door-closed"></i>
+                            <p>
+                                Cerrar Sesión
+                            </p>
+                        </a>
+                    </li>
+                    
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  

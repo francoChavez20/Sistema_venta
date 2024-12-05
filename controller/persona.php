@@ -88,7 +88,7 @@ if ($tipo == "registrar") {
                 $cod_postal,
                 $direccion,
                 $rol,
-                $password_hashed, // Contraseña encriptada
+                $password_hashed // Contraseña encriptada
                 
             );
 

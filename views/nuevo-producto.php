@@ -7,10 +7,11 @@
     <style>
         /* Estilos para el contenedor del formulario */
         .form-container {
+            margin: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 85vh;
             background-color: #f0f2f5;
         }
 
@@ -21,7 +22,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 350px;
+            width: 600px;
             font-family: Arial, sans-serif;
         }
 
@@ -34,6 +35,17 @@
             margin-bottom: 5px;
             font-weight: bold;
             color: #333;
+        }
+
+        /* Contenedor para dos columnas */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .form-column {
+            flex: 1;
         }
 
         /* Estilos para los inputs y selects */
@@ -91,39 +103,47 @@
     <div class="form-container">
         <form class="form" action="" id="frmRegistrar">
             <h2>Registrar Producto</h2>
-            <div>
-                <label for="codigo">Código</label>
-                <input type="text" id="codigo" name="codigo" placeholder="Código" required>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="codigo">Código</label>
+                    <input type="text" id="codigo" name="codigo" placeholder="Código" required>
+                </div>
+                <div class="form-column">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
             </div>
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="detalle">Detalle</label>
+                    <input type="text" id="detalle" name="detalle" placeholder="Detalle" required>
+                </div>
+                <div class="form-column">
+                    <label for="precio">Precio</label>
+                    <input type="text" id="precio" name="precio" placeholder="Precio" required>
+                </div>
             </div>
-            <div>
-                <label for="detalle">Detalle</label>
-                <input type="text" id="detalle" name="detalle" placeholder="Detalle" required>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="stock">Stock</label>
+                    <input type="text" id="stock" name="stock" placeholder="Stock" required>
+                </div>
+                <div class="form-column">
+                    <label for="categoria">Categoría</label>
+                    <select name="categoria" id="categoria" required>
+                        <option value="">-- Seleccione --</option>
+                    </select>
+                </div>
             </div>
-            <div>
-                <label for="precio">Precio</label>
-                <input type="text" id="precio" name="precio" placeholder="Precio" required>
-            </div>
-            <div>
-                <label for="stock">Stock</label>
-                <input type="text" id="stock" name="stock" placeholder="Stock" required>
-            </div>
-            <div>
-                <label for="categoria">Categoría</label>
-                <select name="categoria" id="categoria" required>
-                    <option value="">-- Seleccione --</option>
-                </select>
-            </div>
-            <div>
-                <label for="fecha_vencimiento">Fecha de Vencimiento</label>
-                <input type="date" id="fecha_v" name="fecha_v" required>
-            </div>
-            <div>
-                <label for="imagen">Imagen</label>
-                <input type="file" id="imagen" name="imagen" required>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+                    <input type="date" id="fecha_v" name="fecha_v" required>
+                </div>
+                <div class="form-column">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" id="imagen" name="imagen" required>
+                </div>
             </div>
             <div>
                 <label for="proveedor">Proveedor</label>

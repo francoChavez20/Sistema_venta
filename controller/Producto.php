@@ -29,7 +29,7 @@ if ($tipo == "listar") {
             $producto = $arr_productos[$i]->nombre;
             $opciones = '
             <a href="' . BASE_URL . 'editar-producto/' . $id_producto . '" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
-            <button onclick="eliminar-producto(' . $id_producto . ');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+            <button onclick="eliminar_producto(' . $id_producto . ');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
 
             $arr_productos[$i]->options = $opciones;
         }
@@ -128,3 +128,15 @@ if ($tipo == "actualizar") {
     echo json_encode($arr_Respuestas);
 }
 
+if ($tipo == "eliminar") {
+    $id_producto = $_POST['id_producto'];
+    $arr_Respuesta = $objProducto->eliminarProductos($id_producto);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false);
+    } else {
+        $response = array('status' => true);
+    }
+    echo json_encode($response);
+
+}

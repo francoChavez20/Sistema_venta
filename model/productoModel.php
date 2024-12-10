@@ -42,6 +42,12 @@ $sql = $this->conexion->query("CALL insertProducto('{$codigo}','{$nombre}','{$de
         $sql = $sql->fetch_object();
         return $sql;
     }
+    public function eliminarProductos($id){
+        $sql = $this->conexion->query("CALL eliminarProducto('{$id}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+
+    }
    
 }
 

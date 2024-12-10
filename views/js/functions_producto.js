@@ -184,9 +184,9 @@ async function actualizar_producto() {
         });
         json = await respuesta.json();
         if (json.status) {
-            swal("Registro",json.mensaje,"success");
+            swal("Actualizacion",json.mensaje,"success");
         }else{
-            swal("Registro",json.mensaje,"error");
+            swal("Actualizacion",json.mensaje,"error");
         }
     
         console.log(json);
@@ -197,3 +197,43 @@ async function actualizar_producto() {
 
 }
 
+async function eliminar_producto(id) {
+    swal({
+        title: "¿Estás seguro de eliminar este producto?",
+        text: "No podrás recuperarlo",
+        icon:"warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete)=>{
+        if (willDelete) {
+            fnt_eliminar(id);
+        }
+
+    })
+}
+
+async function fnt_eliminar(id) {
+     const formdata = new FormData();
+     formdata.append('id_producto', id);
+     try{
+        
+        let respuesta = await fetch(base_url+'controller/Producto.php?tipo=eliminar',{
+            method: 'POST', 
+            mode: 'cors',
+            cache:'no-cache',
+            body: formdata
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Eliminar","eliminado correctamente", "success")
+            document.querySelector('#fila_' + id).remove();
+        }else{
+            swal("Eliminar","error al eliminar", "warning");
+        }
+    
+        console.log(json);
+    }catch(e){
+        console.log("oops ocurrio un error"+e);
+    }
+
+}

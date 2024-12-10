@@ -106,17 +106,17 @@ if ($tipo == "actualizar") {
     $proveedor = $_POST['proveedor'];
 
     if ($nombre == "" || $detalle == "" || $precio == "" || $categoria == "" || $fecha_v == "" ||  $proveedor == "") {
-        $arr_Respuestas = array('status' => false, 'mensaje' => 'error camps vacios');
+        $arr_Respuestas = array('status' => false, 'mensaje' => 'error campos vacios');
     } else {
         $arrProducto = $objProducto->actualizarProducto($id_producto, $nombre, $detalle, $precio, $categoria, $fecha_v, $proveedor);
         if ($arrProducto->p_id > 0) {
             $arr_Respuestas = array('status' => true, 'mensaje' => 'actualizacion Exitoso');
 
             if ($_FILES['imagen']['tmp_name'] != "") {
-                unlink('../asset/img_productos' . $img);
+                unlink('../asset/img_producto/' . $img);
                 //cargar Archivo
                 $archivo = $_FILES['imagen']['tmp_name'];
-                $destino = '../asset/img_productos/';
+                $destino = '../asset/img_producto/';
                 $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
                 if (move_uploaded_file($archivo, $destino . '' . $id_producto . '.' . $tipoArchivo)) {
                 }

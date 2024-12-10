@@ -134,7 +134,7 @@
                     </select>
                 </div>
                 <div class="form-column">
-                    <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+                    <label for="fecha_v">Fecha de Vencimiento</label>
                     <input type="date" id="fecha_v" name="fecha_v" required>
                 </div>
             </div>

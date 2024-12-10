@@ -267,7 +267,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-cube"></i>
               <p>
                 Productos
                 <i class="right fas fa-angle-left"></i>
@@ -285,7 +285,7 @@
 
           <li class="nav-item menu">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-address-card"></i>
+              <i class="nav-icon fas fa-bars"></i>
               <p>
                 Categorias
                 <i class="right fas fa-angle-left"></i>
@@ -302,7 +302,7 @@
           </li>
           <li class="nav-item menu">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-credit-card"></i>
+              <i class="nav-icon fa fa-truck"></i>
               <p>
                 Proveedores
                 <i class="right fas fa-angle-left"></i>
@@ -320,7 +320,7 @@
           </li>
           <li class="nav-item menu">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-credit-card"></i>
+              <i class="nav-icon fa fa-cart-plus"></i>
               <p>
                  Compras
                 <i class="right fas fa-angle-left"></i>
@@ -354,6 +354,55 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-file-export"></i>
+              
+              <p>
+                Ventas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-venta" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista de Ventas</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-detalle" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Detalle de las Ventas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item menu">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p>
+                Pagos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL;?>ver-pago" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista de Pagos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+
+
           <li class="nav-item">
                         <a class="nav-link mt-4" onclick="cerrar_sesion();" style="background-color: #ca0a0b">
                             <i class="nav-icon fas fa-door-closed"></i>

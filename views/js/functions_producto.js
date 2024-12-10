@@ -157,7 +157,7 @@ async function ver_producto(id) {
             document.querySelector('#detalle').value = json.contenido.detalle;
             document.querySelector('#precio').value = json.contenido.precio;
             document.querySelector('#categoria').value = json.contenido.id_categoria;
-            document.querySelector('#fecha_v').value = json.contenido.fecha_v;
+            document.querySelector('#fecha_v').value = json.contenido.fecha_vencimiento;
             document.querySelector('#proveedor').value = json.contenido.id_proveedor;
             document.querySelector('#img').value = json.contenido.imagen;
             
@@ -169,6 +169,9 @@ async function ver_producto(id) {
         console.log("opp ocurrio un error"+error)
     }
 }
+
+
+
 async function actualizar_producto() {
     const datos = new FormData(frmActualizar);
     try{

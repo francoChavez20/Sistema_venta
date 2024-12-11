@@ -154,7 +154,7 @@ async function editar_persona(id) {
             document.querySelector('#direccion').value = json.contenido.direccion;
             document.querySelector('#rol').value = json.contenido.rol;
           }else{
-            window.location= base_url+"ver-categoria";
+            window.location= base_url+"ver-usuario";
         }
         console.log(json);
     } catch (error) {

@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">listado de Usuarioa
+                    <h1 class="m-0">listado de Usuarios
                         <a href="<?php echo BASE_URL;?>nueva-persona">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
                             <i class="fa fa-plus"></i> Agregar Nuevo usuario

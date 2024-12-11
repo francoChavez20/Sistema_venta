@@ -50,7 +50,7 @@ async function registrar_compra(){
         const datos = new FormData(frmRegistrarCompra);
         
         // Enviar datos hacia el controlador
-        let respuesta = await fetch(base_url + 'controller/Compra.php?tipo=registrar', {
+        let respuesta = await fetch(base_url + 'controller/compra.php?tipo=registrar', {
             method: 'POST', 
             mode: 'cors',
             cache: 'no-cache',
@@ -92,7 +92,7 @@ async function listar_productos(){
 
 async function listar_trabajadores(){
     try {
-        let respuesta = await fetch(base_url + 'controller/Trabajador.php?tipo=listar');
+        let respuesta = await fetch(base_url + 'controller/trabajador.php?tipo=listar');
         let json = await respuesta.json();
 
         if (json.status) {
@@ -117,7 +117,7 @@ async function editar_compra(id) {
     const formData = new FormData();
     formData.append('id_compra', id);
     try {
-        let respuesta = await fetch(base_url + 'controller/Compra.php?tipo=ver',{
+        let respuesta = await fetch(base_url + 'controller/compra.php?tipo=ver',{
             method: 'POST',
             mode:'cors',
             cache: 'no-cache',

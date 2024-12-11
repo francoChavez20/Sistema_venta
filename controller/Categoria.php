@@ -1,5 +1,6 @@
 <?php
 require_once('../model/categoriaModel.php');
+
 $tipo = $_REQUEST['tipo'];
 
 //instancio la clase modeloproducto

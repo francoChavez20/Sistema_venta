@@ -30,7 +30,7 @@ class personaModel {
         return $objeto;
     }
     public function obtener_personas($id) {
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id = '$id'");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id = '$id' AND rol = 'proveedor'");
         $objeto = $respuesta->fetch_object();
         return $objeto;
     }

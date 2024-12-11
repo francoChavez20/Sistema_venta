@@ -132,7 +132,7 @@ async function registrar_categoria(){
         const formData = new FormData();
         formData.append('id_categoria', id);
         try {
-            let respuesta = await fetch(base_url + 'controller/categoria.php?tipo=ver',{
+            let respuesta = await fetch(base_url + 'controller/Categoria.php?tipo=ver',{
                 method: 'POST',
                 mode:'cors',
                 cache: 'no-cache',

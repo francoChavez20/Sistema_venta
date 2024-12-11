@@ -91,7 +91,7 @@
     <div class="form-container">
         <form class="form" action="" id="frmActualizar">
         <input type="hidden" name="id_categoria" id="id_categoria">
-            <h2>Registrar categoria</h2>
+            <h2>ACTUALIZAR categoria</h2>
            
             <div>
                 <label for="nombre">Nombre</label>

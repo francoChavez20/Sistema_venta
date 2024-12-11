@@ -161,7 +161,7 @@
     <script src="<?php echo BASE_URL ?>views/js/functions_personas.js"></script>
     <script>
     const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina[1];?>;
-    editar_Persona(id_p);
+    editar_persona(id_p);
     </script>
 </body>
 </html>

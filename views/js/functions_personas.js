@@ -130,7 +130,7 @@ async function registrar_usuarios() {
 }
 
 
-async function editar_Persona(id) {
+async function editar_persona(id) {
     const formData = new FormData();
     formData.append('id_persona', id);
     try {

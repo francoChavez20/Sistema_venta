@@ -4,10 +4,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">listado de Proveedores
+                    <h1 class="m-0">listado de Usuarioa
                         <a href="<?php echo BASE_URL;?>nueva-persona">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
-                            <i class="fa fa-plus"></i> Agregar Nuevo Proveedor
+                            <i class="fa fa-plus"></i> Agregar Nuevo usuario
                         </button>
                         </a>
                     </h1>
@@ -18,7 +18,7 @@
     </div>
     <div class="card card-primary m-2">
         <div class="card-header">
-            <h3 class="card-title">Proveedores</h3>
+            <h3 class="card-title">Usuarios</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>

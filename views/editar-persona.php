@@ -92,8 +92,9 @@
 </head>
 <body>
     <div class="form-container">
-        <form class="form" action="" id="frmRegistrarPersona">
-            <h2>Registrar</h2>
+        <form class="form" action="" id="frmActualizar">
+        <input type="hidden" name="id_persona" id="id_persona">
+            <h2>Actualizar</h2>
 
             <!-- Filas del formulario -->
             <div class="form-row">
@@ -147,22 +148,20 @@
                 </div>
                 <div>
                     <label for="rol">Rol</label>
-                    <input type="text" id="rol" name="rol" placeholder="Rol" required>
+                    <input type="text" id="rol" name="rol" placeholder="Rol" readonly>
                 </div>
             </div>
 
-            <div class="form-row">
-                <div>
-                    <label for="password">Contraseña</label>
-                    <input type="text" id="password" name="password" placeholder="Contraseña" required>
-                </div>
-            </div>
 
             <!-- Botón de envío -->
-            <button type="button" class="button" onclick="registrar_usuarios();">Enviar</button>
+            <button type="button" class="button" onclick="actualizar_persona();">Enviar</button>
         </form>
     </div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="<?php echo BASE_URL ?>views/js/functions_personas.js"></script>
+    <script>
+    const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina[1];?>;
+    editar_Persona(id_p);
+    </script>
 </body>
 </html>

@@ -19,5 +19,10 @@ class VentasModel {
 
         return $arrRespuesta;
     }
+    public function listar_venta($id){
+        $respuesta = $this->conexion->query("SELECT * FROM venta WHERE id  = '$id'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+      }
 }
 ?>

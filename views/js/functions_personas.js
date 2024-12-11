@@ -31,10 +31,14 @@ async function listar_proveedor() {
         console.log("oops salio error"+error);
     }
 }
-
 if (document.querySelector('#tbl_proveedor')) {
     listar_proveedor();
 }
+
+
+
+
+
 
 async function listar_usuarios() {
     try {
@@ -73,13 +77,6 @@ async function listar_usuarios() {
 if (document.querySelector('#tbl_usuario')) {
     listar_usuarios();
 }
-
-
-
-
-
-
-
 
 
 async function registrar_usuarios() {
@@ -130,4 +127,111 @@ async function registrar_usuarios() {
     } catch (e) {
         console.log("Oops, ocurrió un error: " + e);
     }
+}
+
+
+async function editar_Persona(id) {
+    const formData = new FormData();
+    formData.append('id_persona', id);
+    try {
+        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=ver',{
+            method: 'POST',
+            mode:'cors',
+            cache: 'no-cache',
+            body: formData
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            document.querySelector('#id_persona').value = json.contenido.id;
+            document.querySelector('#nro_identidad').value = json.contenido.nro_identidad;
+            document.querySelector('#razon_social').value = json.contenido.razon_social;
+            document.querySelector('#telefono').value = json.contenido.telefono;
+            document.querySelector('#correo').value = json.contenido.correo;
+            document.querySelector('#departamento').value = json.contenido.departamento;
+            document.querySelector('#provincia').value = json.contenido.provincia;
+            document.querySelector('#distrito').value = json.contenido.distrito;
+            document.querySelector('#cod_postal').value = json.contenido.cod_postal;
+            document.querySelector('#direccion').value = json.contenido.direccion;
+            document.querySelector('#rol').value = json.contenido.rol;
+          }else{
+            window.location= base_url+"ver-categoria";
+        }
+        console.log(json);
+    } catch (error) {
+        console.log("opp ocurrio un error"+error)
+    }
+}
+
+async function actualizar_persona() {
+    const datos = new FormData(frmActualizar);
+    try{
+        
+        let respuesta = await fetch(base_url+'controller/persona.php?tipo=actualizar',{
+            method: 'POST', 
+            mode: 'cors',
+            cache:'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Actualizacion",json.mensaje,"success");
+        }else{
+            swal("Actualizacion",json.mensaje,"error");
+        }
+    
+        console.log(json);
+    }catch(e){
+       
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+async function eliminar_persona(id) {
+    swal({
+        title: "¿Estás seguro de eliminar este usuario?",
+        text: "No podrás recuperarlo",
+        icon:"warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete)=>{
+        if (willDelete) {
+            fnt_eliminar(id);
+        }
+
+    })
+}
+
+async function fnt_eliminar(id) {
+     const formdata = new FormData();
+     formdata.append('id_usuario', id);
+     try{
+        
+        let respuesta = await fetch(base_url+'controller/persona.php?tipo=eliminar',{
+            method: 'POST', 
+            mode: 'cors',
+            cache:'no-cache',
+            body: formdata
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Eliminar","eliminado correctamente", "success")
+            document.querySelector('#fila_' + id).remove();
+        }else{
+            swal("Eliminar","error al eliminar", "warning");
+        }
+    
+        console.log(json);
+    }catch(e){
+        console.log("oops ocurrio un error"+e);
+    }
+
 }

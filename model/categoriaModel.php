@@ -20,6 +20,19 @@ class CategoriaModel{
     $objeto = $respuesta->fetch_object();
     return $objeto;
   }
+
+  public function eliminarCategoria($id){
+    $sql = $this->conexion->query("CALL eliminarCategoria('{$id}')");
+    $sql = $sql->fetch_object();
+    return $sql;
+
+}
+public function actualizarCategoria($id, $nombre, $detalle){
+    $sql = $this->conexion->query("CALL updateCategoria('{$id}','{$nombre}','{$detalle}')");
+    $sql = $sql->fetch_object();
+    return $sql;
+}
+
 }
 
 

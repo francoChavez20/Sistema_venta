@@ -152,6 +152,7 @@ async function ver_producto(id) {
         });
         json = await respuesta.json();
         if (json.status) {
+            document.querySelector('#id_producto').value = json.contenido.id;
             document.querySelector('#codigo').value = json.contenido.codigo;
             document.querySelector('#nombre').value = json.contenido.nombre;
             document.querySelector('#detalle').value = json.contenido.detalle;
@@ -191,7 +192,7 @@ async function actualizar_producto() {
     
         console.log(json);
     }catch(e){
-        console.log("oops ocurrio un error"+e);
+       
     }
     
 

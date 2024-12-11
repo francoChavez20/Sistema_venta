@@ -18,7 +18,7 @@
     </div>
     <div class="card card-primary m-2">
         <div class="card-header">
-            <h3 class="card-title">Ventas</h3>
+            <h3 class="card-title">Pagos registrados</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -31,7 +31,7 @@
                 <thead>
            <tr>
             <th>Nro</th>
-            <th>venta</th>
+            <th>codigo de venta</th>
             <th>fecha</th>
             <th>monto</th>
             <th>metodo de pago</th>

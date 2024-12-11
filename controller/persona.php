@@ -14,12 +14,12 @@ if ($tipo == "listar") {
         // recorremos el array para agregar las opciones de la categorias
         for ($i = 0; $i < count($arr_proveedor); $i++) {
 
-            $id_proveedor = $arr_proveedor[$i]->id; 
-            $proveedor = $arr_proveedor[$i] ->razon_social;
+            $id_proveedor = $arr_proveedor[$i]->id;
+            $proveedor = $arr_proveedor[$i]->razon_social;
             $opciones = '
-            <a href="'.BASE_URL.'editar-producto/'. $id_proveedor.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
-            <button onclick="eliminar-producto('. $id_proveedor.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
-            
+            <a href="' . BASE_URL . 'editar-persona/' . $id_proveedor . '" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar_persona(' . $id_proveedor . ');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+
             $arr_proveedor[$i]->options = $opciones;
         }
         $arr_Respuestas['status'] = true;
@@ -35,13 +35,13 @@ if ($tipo == "listar_usuario") {
     $arr_usuarios = $objPersona->obtener_usuarios();
 
     if (!empty($arr_usuarios)) {
-      
+
         for ($i = 0; $i < count($arr_usuarios); $i++) {
-            $id_usuario = $arr_usuarios[$i]->id; 
+            $id_usuario = $arr_usuarios[$i]->id;
             $opciones = '
-            <a href="'.BASE_URL.'editar-producto/'. $id_usuario.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
-            <button onclick="eliminar-producto('. $id_usuario.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
-            $arr_usuarios[$i]->options = $opciones; 
+            <a href="' . BASE_URL . 'editar-persona/' . $id_usuario . '" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
+            <button onclick="eliminar_persona(' . $id_usuario . ');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+            $arr_usuarios[$i]->options = $opciones;
         }
         $arr_Respuestas['status'] = true;
         $arr_Respuestas['contenido'] = $arr_usuarios;
@@ -64,7 +64,7 @@ if ($tipo == "registrar") {
         $direccion = $_POST['direccion'];
         $rol = $_POST['rol'];
         $password = $_POST['password']; // Captura de la contraseña sin encriptar
-       
+
 
         // Verificación de campos vacíos
         if (
@@ -91,7 +91,7 @@ if ($tipo == "registrar") {
                 $direccion,
                 $rol,
                 $password_hashed // Contraseña encriptada
-                
+
             );
 
             if ($arrPersona->id > 0) {
@@ -105,3 +105,68 @@ if ($tipo == "registrar") {
     }
 }
 
+if ($tipo == "ver") {
+    //print_r($_POST);
+    $id_persona = $_POST['id_persona'];
+    $arr_Respuesta = $objPersona->obtener_personas($id_persona);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false, 'mensaje' => "No se encontraron resultados");
+    } else {
+        $response = array('status' => true, 'mensaje' => "datos encontrados", 'contenido' => $arr_Respuesta);
+    }
+    echo json_encode($response);
+}
+
+
+if ($tipo == "actualizar") {
+    $id_persona = $_POST['id_persona'];
+    $nro_identidad = $_POST['nro_identidad'];
+    $razon_social = $_POST['razon_social'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $departamento = $_POST['departamento'];
+    $provincia = $_POST['provincia'];
+    $distrito = $_POST['distrito'];
+    $cod_postal = $_POST['cod_postal'];
+    $direccion = $_POST['direccion'];
+
+    if (
+        $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" ||
+        $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" ||
+        $direccion == ""
+    ) {
+        $arr_Respuestas = array('status' => false, 'mensaje' => 'error campos vacios');
+    } else {
+        $arr_Categorias = $objPersona->actualizarPersona($id_persona,
+            $nro_identidad,
+            $razon_social,
+            $telefono,
+            $correo,
+            $departamento,
+            $provincia,
+            $distrito,
+            $cod_postal,
+            $direccion
+        );
+        if ($arr_Categorias->p_id > 0) {
+            $arr_Respuestas = array('status' => true, 'mensaje' => 'actualizacion Exitoso');
+        } else {
+            $arr_Respuestas = array('status' => false, 'mensaje' => 'Error al actualizar Producto');
+        }
+    }
+    echo json_encode($arr_Respuestas);
+}
+
+
+if ($tipo == "eliminar") {
+    $id_usuario = $_POST['id_usuario'];
+    $arr_Respuesta = $objPersona->eliminarUsuario($id_usuario);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false);
+    } else {
+        $response = array('status' => true);
+    }
+    echo json_encode($response);
+}

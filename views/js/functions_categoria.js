@@ -140,7 +140,7 @@ async function registrar_categoria(){
             });
             json = await respuesta.json();
             if (json.status) {
-                
+                document.querySelector('#id_categoria').value = json.contenido.id;
                 document.querySelector('#nombre').value = json.contenido.nombre;
                 document.querySelector('#detalle').value = json.contenido.detalle;
               }else{
@@ -151,6 +151,70 @@ async function registrar_categoria(){
             console.log("opp ocurrio un error"+error)
         }
     }
+    async function actualizar_categoria() {
+        const datos = new FormData(frmActualizar);
+        try{
+            
+            let respuesta = await fetch(base_url+'controller/Categoria.php?tipo=actualizar',{
+                method: 'POST', 
+                mode: 'cors',
+                cache:'no-cache',
+                body: datos
+            });
+            json = await respuesta.json();
+            if (json.status) {
+                swal("Actualizacion",json.mensaje,"success");
+            }else{
+                swal("Actualizacion",json.mensaje,"error");
+            }
+        
+            console.log(json);
+        }catch(e){
+           
+        }
+        
+    
+    }
     
     
+
+    async function eliminar_categoria(id) {
+        swal({
+            title: "¿Estás seguro de eliminar esta categoria?",
+            text: "No podrás recuperarlo",
+            icon:"warning",
+            buttons: true,
+            dangerMode: true
+        }).then((willDelete)=>{
+            if (willDelete) {
+                fnt_eliminar(id);
+            }
     
+        })
+    }
+    
+    async function fnt_eliminar(id) {
+         const formdata = new FormData();
+         formdata.append('id_categoria', id);
+         try{
+            
+            let respuesta = await fetch(base_url+'controller/Categoria.php?tipo=eliminar',{
+                method: 'POST', 
+                mode: 'cors',
+                cache:'no-cache',
+                body: formdata
+            });
+            json = await respuesta.json();
+            if (json.status) {
+                swal("Eliminar","eliminado correctamente", "success")
+                document.querySelector('#fila_' + id).remove();
+            }else{
+                swal("Eliminar","error al eliminar", "warning");
+            }
+        
+            console.log(json);
+        }catch(e){
+            console.log("oops ocurrio un error"+e);
+        }
+    
+    }

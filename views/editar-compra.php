@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario con Estilo</title>
+    <title>Formulario de Compras</title>
     <style>
         /* Estilos para el contenedor del formulario */
         .form-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 85vh;
+            height: 100vh;
             background-color: #f0f2f5;
         }
 
@@ -39,7 +39,6 @@
         /* Estilos para los inputs y selects */
         input[type="text"],
         input[type="date"],
-        input[type="file"],
         select {
             width: 100%;
             padding: 10px;
@@ -71,7 +70,6 @@
         /* Estilo de hover para los inputs y selects */
         input[type="text"]:focus,
         input[type="date"]:focus,
-        input[type="file"]:focus,
         select:focus {
             border-color: #4CAF50;
             outline: none;
@@ -90,27 +88,42 @@
 <body>
     <div class="form-container">
         <form class="form" action="" id="frmActualizar">
-        <input type="hidden" name="id_categoria" id="id_categoria">
-            <h2>Registrar categoria</h2>
-           
+        <input type="hidden" name="id_compra" id="id_compra">
+            <h2>Actualizar Compra</h2>
             <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <label for="id_producto">Producto</label>
+                <select name="id_producto" id="id_producto" required>
+                    <option value="">-- Seleccione producto --</option>
+                </select>
             </div>
             <div>
-                <label for="detalle">Detalle</label>
-                <input type="text" id="detalle" name="detalle" placeholder="Detalle" required>
+                <label for="cantidad">Cantidad</label>
+                <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" required>
             </div>
-            
-            <button type="button" class="button" onclick="actualizar_categoria();">Actualizar</button>
+            <div>
+                <label for="precio">Precio</label>
+                <input type="text" id="precio" name="precio" placeholder="Precio" required>
+            </div>
+            <div>
+                <label for="fecha_compra">Fecha de Compra</label>
+                <input type="date" id="fecha_compra" name="fecha_compra" required>
+            </div>
+            <div>
+                <label for="id_trabajador">Trabajador</label>
+                <select name="id_trabajador" id="id_trabajador" required>
+                    <option value="">-- Seleccione trabajador --</option>
+                </select>
+            </div>
+            <button type="button" class="button" onclick="actualizar_compra();">Enviar</button>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </form>
     </div>
-    <script src="<?php echo BASE_URL ?>views/js/functions_categoria.js"></script>
-    <script src="<?php echo BASE_URL; ?>views/js/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo BASE_URL ?>views/js/functions_compras.js"></script>
+    <script>listar_productos();</script>
+    <script>listar_trabajadores();</script>
     <script>
     const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina[1];?>;
-    editar_categoria(id_p);
+    editar_compra(id_p);
     </script>
 </body>
 </html>

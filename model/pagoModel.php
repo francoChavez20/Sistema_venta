@@ -18,5 +18,12 @@ class PagoModel {
 
         return $arrRespuesta;
     }
+
+    public function registrarPago($id_venta, $fecha, $monto, $metodo) {
+        $sql = $this->conexion->query("CALL insertPagos('{$id_venta}', '{$fecha}', '{$monto}', '{$metodo}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+
 }
 ?>

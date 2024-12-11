@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario con Estilo</title>
+    <title>Formulario de Compras</title>
     <style>
         /* Estilos para el contenedor del formulario */
         .form-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 85vh;
+            height: 100vh;
             background-color: #f0f2f5;
         }
 
@@ -39,7 +39,6 @@
         /* Estilos para los inputs y selects */
         input[type="text"],
         input[type="date"],
-        input[type="file"],
         select {
             width: 100%;
             padding: 10px;
@@ -71,7 +70,6 @@
         /* Estilo de hover para los inputs y selects */
         input[type="text"]:focus,
         input[type="date"]:focus,
-        input[type="file"]:focus,
         select:focus {
             border-color: #4CAF50;
             outline: none;
@@ -89,28 +87,33 @@
 </head>
 <body>
     <div class="form-container">
-        <form class="form" action="" id="frmActualizar">
-        <input type="hidden" name="id_categoria" id="id_categoria">
-            <h2>Registrar categoria</h2>
-           
+        <form class="form" action="" id="frmRegistrarPago">
+            <h2>Registrar Pago</h2>
             <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <label for="id_venta">codigo de venta</label>
+                <select name="id_venta" id="id_venta" required>
+                    <option value="">-- Seleccione venta --</option>
+                </select>
             </div>
             <div>
-                <label for="detalle">Detalle</label>
-                <input type="text" id="detalle" name="detalle" placeholder="Detalle" required>
+                <label for="fecha">fecha</label>
+                <input type="date" id="fecha" name="fecha" placeholder="fecha" required>
+            </div>
+            <div>
+                <label for="monto">Monto</label>
+                <input type="text" id="monto" name="monto" placeholder="monto" required>
+            </div>
+            <div>
+                <label for="metodo">Metodo de pago</label>
+                <input type="text" id="metodo" name="metodo" required>
             </div>
             
-            <button type="button" class="button" onclick="actualizar_categoria();">Actualizar</button>
+            <button type="button" class="button" onclick="registrar_pago();">Enviar</button>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </form>
     </div>
-    <script src="<?php echo BASE_URL ?>views/js/functions_categoria.js"></script>
-    <script src="<?php echo BASE_URL; ?>views/js/jquery-3.6.0.min.js"></script>
-    <script>
-    const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina[1];?>;
-    editar_categoria(id_p);
-    </script>
+    <script src="<?php echo BASE_URL ?>views/js/functions_pago.js"></script>
+    <script>listar_venta();</script>
+   
 </body>
 </html>

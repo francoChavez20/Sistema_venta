@@ -29,6 +29,11 @@ class personaModel {
         $objeto = $respuesta->fetch_object();
         return $objeto;
     }
+    public function obtener_personas($id) {
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id = '$id'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+    }
 
     public function obtener_proveedores() {
         $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'proveedor'");
@@ -39,18 +44,30 @@ class personaModel {
         return $proveedores;
     }
     public function obtener_usuarios() {
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'usuario'");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol IN ('usuario', 'cajero', 'administrador','recepcionista')");
         $usuarios = [];
         while ($row = $respuesta->fetch_object()) {
             $usuarios[] = $row;
         }
         return $usuarios;
     }
+    
     public function obtener_trabajador($id){
         $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id  = '$id'");
         $objeto = $respuesta->fetch_object();
         return $objeto;
       }
      
+      public function eliminarUsuario($id){
+        $sql = $this->conexion->query("CALL eliminarPersona('{$id}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    
+    }
+    public function actualizarPersona($id,$nro_identidad,$razon_social,$telefono,$correo,$departamento,$provincia,$distrito,$cod_postal,$direccion){
+        $sql = $this->conexion->query("CALL updatePersona('{$id}','{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$provincia}','{$distrito}','{$cod_postal}','{$direccion}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
 }
 ?>

@@ -13,9 +13,7 @@ if ($tipo == "listar") {
         for ($i = 0; $i < count($arr_proveedor); $i++) {
             $id_proveedor = $arr_proveedor[$i]->id;
             $proveedor = $arr_proveedor[$i]->razon_social;
-            $opciones = '
-            <a href="'.BASE_URL.'editar-producto/'. $id_proveedor.'" class="btn btn-warning"><i class="fa fa-pencil"></i> editar</a>
-            <button onclick="eliminar-producto('. $id_proveedor.');" class="btn btn-danger"><i class="fa fa-trash"></i>eliminar</button>';
+            $opciones = '';
             $arr_proveedor[$i] -> options= $opciones;
         }
         $arr_Respuestas['status'] = true;

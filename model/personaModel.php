@@ -43,7 +43,7 @@ class personaModel
 
     public function obtener_proveedores()
     {
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'proveedor'");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol IN ('proveedor') AND estado = '1';");
         $proveedores = [];
         while ($row = $respuesta->fetch_object()) {
             $proveedores[] = $row;

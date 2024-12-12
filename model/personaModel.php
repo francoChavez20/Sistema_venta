@@ -44,7 +44,7 @@ class personaModel {
         return $proveedores;
     }
     public function obtener_usuarios() {
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol IN ('usuario', 'cajero', 'administrador','recepcionista')");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol IN ('usuario', 'cajero','recepcionista')");
         $usuarios = [];
         while ($row = $respuesta->fetch_object()) {
             $usuarios[] = $row;

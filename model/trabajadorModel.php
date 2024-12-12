@@ -10,7 +10,7 @@ class trabajadorModel{
     }
     public function obtener_trabajador(){
         $arrRespuesta = array();
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol = 'trabajador'");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol IN ('cajero','recepcionista')");
         while ($objeto = $respuesta->fetch_object()) {
             array_push($arrRespuesta, $objeto);
         }

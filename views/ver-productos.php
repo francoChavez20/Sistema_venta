@@ -33,6 +33,7 @@
             <th>Nro</th>
             <th>codigo</th>
             <th >Nombre</th>
+            <th >Detalle</th>
             <th>stock</th>
             <th>categoria</th>
             <th>proveedor</th>

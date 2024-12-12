@@ -9,7 +9,7 @@ class ProveedorModel{
     }
     public function obtener_proveedor(){
         $arrRespuesta = array();
-        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol in ('proveedor') AND estado = '1'");
+        $respuesta = $this->conexion->query("SELECT * FROM persona WHERE rol in ('proveedor') AND estado = '1';");
         while ($objeto = $respuesta->fetch_object()) {
             array_push($arrRespuesta, $objeto);
         }

@@ -232,7 +232,7 @@ async function fnt_eliminar(id) {
             swal("Eliminar", json.message || "Eliminado correctamente", "success");
             document.querySelector('#fila_' + id).remove();
         } else {
-            swal("Eliminar", json.message || "No se pudo eliminar la categoría", "warning");
+            swal("Eliminar", json.message || "No se pudo eliminar", "warning");
         }
 
         console.log(json);

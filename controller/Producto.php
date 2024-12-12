@@ -142,15 +142,15 @@ if ($tipo == "eliminar") {
         } else {
             $response = array(
                 'status' => true,
-                'message' => 'Categoría eliminada correctamente.'
+                'message' => 'producto eliminado correctamente.'
             );
         }
     } catch (PDOException $e) {
-        // Verificamos si el error es debido a una restricción de clave foránea
-        if ($e->getCode() == '23000') { // Código de error SQLSTATE para restricciones de integridad
+
+        if ($e->getCode() == '23000') { 
             $response = array(
                 'status' => false,
-                'message' => 'No se puede eliminar esta categoría porque está asociada a otros registros.'
+                'message' => 'No se puede eliminar porque está asociada a otros registros.'
             );
         } else {
             // Otro tipo de error

@@ -110,6 +110,7 @@
       </div>
 
       <div class="login-container" style="border-radius: 0px 20px 20px 0px">
+        
         <h2>INICIAR SESION</h2>
         <p style="color: #f1f1f1;">usuario: 75958792</p>
         <p style="color: #f1f1f1;">contraseña: 75958792</p>

@@ -111,8 +111,8 @@
 
       <div class="login-container" style="border-radius: 0px 20px 20px 0px">
         <h2>INICIAR SESION</h2>
-        <p>usuario: 75958792</p>
-        <p>contraseña: 75958792</p>
+        <p style="color: #f1f1f1;">usuario: 75958792</p>
+        <p style="color: #f1f1f1;">contraseña: 75958792</p>
         <img src="./views/img/usuario.png" alt="Usuario" />
         <form action="" id="frmIniciar">
           <div class="mb-3 p-1">

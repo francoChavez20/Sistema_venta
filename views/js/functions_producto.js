@@ -220,22 +220,25 @@ async function fnt_eliminar(id) {
      try{
         
         let respuesta = await fetch(base_url+'controller/Producto.php?tipo=eliminar',{
-            method: 'POST', 
+            method: 'POST',
             mode: 'cors',
-            cache:'no-cache',
+            cache: 'no-cache',
             body: formdata
         });
-        json = await respuesta.json();
+
+        let json = await respuesta.json();
+        
         if (json.status) {
-            swal("Eliminar","eliminado correctamente", "success")
+            swal("Eliminar", json.message || "Eliminado correctamente", "success");
             document.querySelector('#fila_' + id).remove();
-        }else{
-            swal("Eliminar","error al eliminar", "warning");
+        } else {
+            swal("Eliminar", json.message || "No se pudo eliminar la categoría", "warning");
         }
-    
+
         console.log(json);
-    }catch(e){
-        console.log("oops ocurrio un error"+e);
+    } catch (e) {
+        console.log("Oops, ocurrió un error: " + e);
+        swal("Error", "no se puede eliminar producto por que esta afiliada a otro registro.", "error");
     }
 
 }

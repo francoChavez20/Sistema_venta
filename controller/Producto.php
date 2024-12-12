@@ -130,13 +130,35 @@ if ($tipo == "actualizar") {
 
 if ($tipo == "eliminar") {
     $id_producto = $_POST['id_producto'];
-    $arr_Respuesta = $objProducto->eliminarProductos($id_producto);
-    //print_r($arr_Respuesta);
-    if (empty($arr_Respuesta)) {
-        $response = array('status' => false);
-    } else {
-        $response = array('status' => true);
+    
+    try {
+        $arr_Respuesta = $objProducto->eliminarProductos($id_producto);
+        
+        if (empty($arr_Respuesta)) {
+            $response = array(
+                'status' => false,
+                'message' => 'No se encontró la categoría o no pudo ser eliminada.'
+            );
+        } else {
+            $response = array(
+                'status' => true,
+                'message' => 'Categoría eliminada correctamente.'
+            );
+        }
+    } catch (PDOException $e) {
+        // Verificamos si el error es debido a una restricción de clave foránea
+        if ($e->getCode() == '23000') { // Código de error SQLSTATE para restricciones de integridad
+            $response = array(
+                'status' => false,
+                'message' => 'No se puede eliminar esta categoría porque está asociada a otros registros.'
+            );
+        } else {
+            // Otro tipo de error
+            $response = array(
+                'status' => false,
+                'message' => 'Ocurrió un error inesperado: ' . $e->getMessage()
+            );
+        }
     }
     echo json_encode($response);
-
 }

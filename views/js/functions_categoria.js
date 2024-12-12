@@ -11,7 +11,7 @@ async function registrar_categoria(){
         // capturamos datos del formulario html
         const datos = new FormData(frmRegistrarCategoria);
         //enviar datos hacia el controlador
-        let respuesta = await fetch(base_url+'controller/registrarCategoria.php?tipo=registrar',{
+        let respuesta = await fetch(base_url+'controller/rcategoria.php?tipo=registrar',{
             method: 'POST', 
             mode: 'cors',
             cache:'no-cache',

@@ -194,27 +194,29 @@ async function registrar_categoria(){
     }
     
     async function fnt_eliminar(id) {
-         const formdata = new FormData();
-         formdata.append('id_categoria', id);
-         try{
-            
-            let respuesta = await fetch(base_url+'controller/Categoria.php?tipo=eliminar',{
-                method: 'POST', 
+        const formdata = new FormData();
+        formdata.append('id_categoria', id);
+        try {
+            let respuesta = await fetch(base_url + 'controller/Categoria.php?tipo=eliminar', {
+                method: 'POST',
                 mode: 'cors',
-                cache:'no-cache',
+                cache: 'no-cache',
                 body: formdata
             });
-            json = await respuesta.json();
-            if (json.status) {
-                swal("Eliminar","eliminado correctamente", "success")
-                document.querySelector('#fila_' + id).remove();
-            }else{
-                swal("Eliminar","error al eliminar", "warning");
-            }
-        
-            console.log(json);
-        }catch(e){
-            console.log("oops ocurrio un error"+e);
-        }
     
+            let json = await respuesta.json();
+            
+            if (json.status) {
+                swal("Eliminar", json.message || "Eliminado correctamente", "success");
+                document.querySelector('#fila_' + id).remove();
+            } else {
+                swal("Eliminar", json.message || "No se pudo eliminar la categoría", "warning");
+            }
+    
+            console.log(json);
+        } catch (e) {
+            console.log("Oops, ocurrió un error: " + e);
+            swal("Error", "no se puede eliminar categoria por que esta afiliada a otro registro.", "error");
+        }
     }
+    
